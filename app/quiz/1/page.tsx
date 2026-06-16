@@ -5,11 +5,12 @@ import { useRouter } from 'next/navigation';
 import { useState } from 'react';
 import { useQuizContext } from '../QuizContext';
 
-const CORRECT_ANSWER = 'A'; // Answer A (Hak) is correct
+const CORRECT_ANSWER = 'A' as const; // Answer A (Hak) is correct
 
 export default function QuizOnePage() {
   const router = useRouter();
   const { score, addScore, setAnswer } = useQuizContext();
+  const CA = CORRECT_ANSWER as 'A' | 'B' | 'C' | 'D';
   const [selectedAnswer, setSelectedAnswer] = useState<string | null>(null);
   const [hasAnswered, setHasAnswered] = useState(false);
 
@@ -52,7 +53,7 @@ export default function QuizOnePage() {
           <label 
             className={`flex items-center h-[36px] rounded-[12px] border-2 px-2 cursor-pointer transition-transform ${
               selectedAnswer === 'A'
-                ? CORRECT_ANSWER === 'A'
+                ? CA === 'A'
                   ? 'border-[#51cf66] bg-[#d3f9d8]'
                   : 'border-[#ff6b6b] bg-[#ffe0e0]'
                 : 'border-[#59a8ff] bg-[#f6f2ea] hover:translate-y-[-1px]'
@@ -62,12 +63,12 @@ export default function QuizOnePage() {
             <input type="radio" name="answer" className="sr-only" checked={selectedAnswer === 'A'} readOnly />
             <span className={`flex h-[28px] w-[28px] items-center justify-center rounded-[7px] border-2 text-[16px] font-black text-shadow-[ -1px_-1px_0_#194f96,1px_-1px_0_#194f96,-1px_1px_0_#194f96,1px_1px_0_#194f96] ${
               selectedAnswer === 'A'
-                ? CORRECT_ANSWER === 'A'
+                ? CA === 'A'
                   ? 'bg-gradient-to-b from-[#51cf66] to-[#2f9e44] border-[#2f9e44] text-[#fff]'
                   : 'bg-gradient-to-b from-[#ff6b6b] to-[#c92a2a] border-[#c92a2a] text-[#fff]'
                 : 'bg-gradient-to-b from-[#77bbff] to-[#2c7ef0] border-[#1f74eb] text-[#ffd41d]'
             }`}>
-              {selectedAnswer === 'A' && CORRECT_ANSWER === 'A' ? '✓' : selectedAnswer === 'A' && CORRECT_ANSWER !== 'A' ? '✗' : 'A'}
+              {selectedAnswer === 'A' && CA === 'A' ? '✓' : selectedAnswer === 'A' && CA !== 'A' ? '✗' : 'A'}
             </span>
             <span className="ml-2 text-[14px] font-bold text-[#341d38]">Hak</span>
           </label>
@@ -75,7 +76,7 @@ export default function QuizOnePage() {
           <label 
             className={`flex items-center h-[36px] rounded-[12px] border-2 px-2 cursor-pointer transition-transform ${
               selectedAnswer === 'B'
-                ? CORRECT_ANSWER === 'B'
+                ? CA === 'B'
                   ? 'border-[#51cf66] bg-[#d3f9d8]'
                   : 'border-[#ff6b6b] bg-[#ffe0e0]'
                 : 'border-[#59a8ff] bg-[#f6f2ea] hover:translate-y-[-1px]'
@@ -85,12 +86,12 @@ export default function QuizOnePage() {
             <input type="radio" name="answer" className="sr-only" checked={selectedAnswer === 'B'} readOnly />
             <span className={`flex h-[28px] w-[28px] items-center justify-center rounded-[7px] border-2 text-[16px] font-black text-shadow-[ -1px_-1px_0_#194f96,1px_-1px_0_#194f96,-1px_1px_0_#194f96,1px_1px_0_#194f96] ${
               selectedAnswer === 'B'
-                ? CORRECT_ANSWER === 'B'
+                ? CA === 'B'
                   ? 'bg-gradient-to-b from-[#51cf66] to-[#2f9e44] border-[#2f9e44] text-[#fff]'
                   : 'bg-gradient-to-b from-[#ff6b6b] to-[#c92a2a] border-[#c92a2a] text-[#fff]'
                 : 'bg-gradient-to-b from-[#77bbff] to-[#2c7ef0] border-[#1f74eb] text-[#ffd41d]'
             }`}>
-              {selectedAnswer === 'B' && CORRECT_ANSWER === 'B' ? '✓' : selectedAnswer === 'B' && CORRECT_ANSWER !== 'B' ? '✗' : 'B'}
+              {selectedAnswer === 'B' && CA === 'B' ? '✓' : selectedAnswer === 'B' && CA !== 'B' ? '✗' : 'B'}
             </span>
             <span className="ml-2 text-[14px] font-bold text-[#341d38]">Kewajiban</span>
           </label>
@@ -98,7 +99,7 @@ export default function QuizOnePage() {
           <label 
             className={`flex items-center h-[36px] rounded-[12px] border-2 px-2 cursor-pointer transition-transform ${
               selectedAnswer === 'C'
-                ? CORRECT_ANSWER === 'C'
+                ? CA === 'C'
                   ? 'border-[#51cf66] bg-[#d3f9d8]'
                   : 'border-[#ff6b6b] bg-[#ffe0e0]'
                 : 'border-[#59a8ff] bg-[#f6f2ea] hover:translate-y-[-1px]'
@@ -108,12 +109,12 @@ export default function QuizOnePage() {
             <input type="radio" name="answer" className="sr-only" checked={selectedAnswer === 'C'} readOnly />
             <span className={`flex h-[28px] w-[28px] items-center justify-center rounded-[7px] border-2 text-[16px] font-black text-shadow-[ -1px_-1px_0_#194f96,1px_-1px_0_#194f96,-1px_1px_0_#194f96,1px_1px_0_#194f96] ${
               selectedAnswer === 'C'
-                ? CORRECT_ANSWER === 'C'
+                ? CA === 'C'
                   ? 'bg-gradient-to-b from-[#51cf66] to-[#2f9e44] border-[#2f9e44] text-[#fff]'
                   : 'bg-gradient-to-b from-[#ff6b6b] to-[#c92a2a] border-[#c92a2a] text-[#fff]'
                 : 'bg-gradient-to-b from-[#77bbff] to-[#2c7ef0] border-[#1f74eb] text-[#ffd41d]'
             }`}>
-              {selectedAnswer === 'C' && CORRECT_ANSWER === 'C' ? '✓' : selectedAnswer === 'C' && CORRECT_ANSWER !== 'C' ? '✗' : 'C'}
+              {selectedAnswer === 'C' && CA === 'C' ? '✓' : selectedAnswer === 'C' && CA !== 'C' ? '✗' : 'C'}
             </span>
             <span className="ml-2 text-[14px] font-bold text-[#341d38]">Hukuman</span>
           </label>
@@ -121,7 +122,7 @@ export default function QuizOnePage() {
           <label 
             className={`flex items-center h-[36px] rounded-[12px] border-2 px-2 cursor-pointer transition-transform ${
               selectedAnswer === 'D'
-                ? CORRECT_ANSWER === 'D'
+                ? CA === 'D'
                   ? 'border-[#51cf66] bg-[#d3f9d8]'
                   : 'border-[#ff6b6b] bg-[#ffe0e0]'
                 : 'border-[#59a8ff] bg-[#f6f2ea] hover:translate-y-[-1px]'
@@ -131,12 +132,12 @@ export default function QuizOnePage() {
             <input type="radio" name="answer" className="sr-only" checked={selectedAnswer === 'D'} readOnly />
             <span className={`flex h-[28px] w-[28px] items-center justify-center rounded-[7px] border-2 text-[16px] font-black text-shadow-[ -1px_-1px_0_#194f96,1px_-1px_0_#194f96,-1px_1px_0_#194f96,1px_1px_0_#194f96] ${
               selectedAnswer === 'D'
-                ? CORRECT_ANSWER === 'D'
+                ? CA === 'D'
                   ? 'bg-gradient-to-b from-[#51cf66] to-[#2f9e44] border-[#2f9e44] text-[#fff]'
                   : 'bg-gradient-to-b from-[#ff6b6b] to-[#c92a2a] border-[#c92a2a] text-[#fff]'
                 : 'bg-gradient-to-b from-[#77bbff] to-[#2c7ef0] border-[#1f74eb] text-[#ffd41d]'
             }`}>
-              {selectedAnswer === 'D' && CORRECT_ANSWER === 'D' ? '✓' : selectedAnswer === 'D' && CORRECT_ANSWER !== 'D' ? '✗' : 'D'}
+              {selectedAnswer === 'D' && CA === 'D' ? '✓' : selectedAnswer === 'D' && CA !== 'D' ? '✗' : 'D'}
             </span>
             <span className="ml-2 text-[14px] font-bold text-[#341d38]">Larangan</span>
           </label>

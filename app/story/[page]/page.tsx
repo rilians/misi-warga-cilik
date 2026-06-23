@@ -37,11 +37,11 @@ export default async function StoryPage({ params }: Props) {
         priority
       />
 
-      <Link href={prevHref} className="absolute bottom-4 left-4 z-20 h-14 w-14">
+      <Link href={prevHref} className="absolute bottom-4 left-4 z-20 h-14 w-14 hover:scale-110 transition-transform duration-300 active:scale-95 inline-flex">
         <Image src="/images/ui/btn-prev.png" alt="Prev" fill className="object-contain" />
       </Link>
 
-      <Link href={nextHref} className="absolute bottom-4 right-4 z-20 h-14 w-14">
+      <Link href={nextHref} className="absolute bottom-4 right-4 z-20 h-14 w-14 hover:scale-110 transition-transform duration-300 active:scale-95 inline-flex">
         <Image src="/images/ui/btn-next.png" alt="Next" fill className="object-contain" />
       </Link>
     </div>

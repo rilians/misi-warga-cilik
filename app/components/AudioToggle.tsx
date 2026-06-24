@@ -9,10 +9,10 @@ export function AudioToggle() {
     <button
       onClick={toggleMusic}
       className={`
-        fixed top-6 right-4 z-50
-        w-12 h-12 rounded-full
+        fixed top-3 sm:top-4 md:top-6 right-3 sm:right-4 md:right-6 z-50
+        w-10 sm:w-11 md:w-12 h-10 sm:h-11 md:h-12 rounded-full
         flex items-center justify-center
-        text-2xl
+        text-xl sm:text-2xl
         transition-all duration-300 ease-out
         shadow-lg hover:shadow-xl
         ${isPlaying 
@@ -20,7 +20,7 @@ export function AudioToggle() {
           : 'bg-gradient-to-br from-gray-300 to-gray-400 hover:scale-105'
         }
         transform hover:-translate-y-1
-        border-3 border-white
+        border-2 sm:border-3 border-white
         active:scale-90
       `}
       title={isPlaying ? 'Matikan musik' : 'Nyalakan musik'}

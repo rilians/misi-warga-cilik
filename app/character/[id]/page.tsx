@@ -38,8 +38,8 @@ export default function CharacterPage({ params }: { params: Promise<{ id: string
       {/* Prev Button - Bottom Left */}
       <button
         onClick={() => router.push(prevHref)}
-        className={`absolute left-6 transition-transform duration-200 hover:scale-105 ${
-          charId === 1 ? 'bottom-8 w-12 h-12' : 'bottom-4 w-12 h-12'
+        className={`absolute left-3 sm:left-4 md:left-6 transition-transform duration-200 hover:scale-105 ${
+          charId === 1 ? 'bottom-6 sm:bottom-7 md:bottom-8 w-10 sm:w-11 md:w-12 h-10 sm:h-11 md:h-12' : 'bottom-4 sm:bottom-5 w-10 sm:w-11 h-10 sm:h-11'
         } rounded-full`}
       >
         <Image
@@ -54,8 +54,8 @@ export default function CharacterPage({ params }: { params: Promise<{ id: string
       {nextHref ? (
         <button
           onClick={() => router.push(nextHref)}
-          className={`absolute right-6 transition-transform duration-200 hover:scale-105 ${
-            charId === 1 ? 'bottom-8 w-12 h-12' : 'bottom-6 w-16 h-16'
+          className={`absolute right-3 sm:right-4 md:right-6 transition-transform duration-200 hover:scale-105 ${
+            charId === 1 ? 'bottom-6 sm:bottom-7 md:bottom-8 w-10 sm:w-11 md:w-12 h-10 sm:h-11 md:h-12' : 'bottom-6 sm:bottom-7 w-14 sm:w-16 h-14 sm:h-16'
           } rounded-full`}
         >
           <Image
@@ -66,10 +66,10 @@ export default function CharacterPage({ params }: { params: Promise<{ id: string
           />
         </button>
       ) : (
-        <div className="absolute bottom-20 right-6 z-20">
+        <div className="absolute bottom-16 sm:bottom-20 right-3 sm:right-4 md:right-6 z-20">
           <button
             onClick={() => router.push('/story/1')}
-            className="relative w-44 h-16 hover:scale-105 transition-transform duration-300 active:scale-95"
+            className="relative w-40 sm:w-44 h-14 sm:h-16 hover:scale-105 transition-transform duration-300 active:scale-95"
           >
             <Image
               src="/images/ui/btn-mulai-cerita.png"

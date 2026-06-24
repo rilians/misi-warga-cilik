@@ -126,7 +126,7 @@ export default function QuizPage() {
 
       <button
         onClick={() => router.push('/menu')}
-        className="absolute bottom-6 left-6 z-10 h-16 w-16 transition-transform duration-200 hover:scale-105 active:scale-95"
+        className="absolute bottom-3 sm:bottom-4 md:bottom-6 left-3 sm:left-4 md:left-6 z-10 h-14 sm:h-16 w-14 sm:w-16 transition-transform duration-200 hover:scale-105 active:scale-95"
       >
         <Image
           src="/images/ui/btn-prev.png"

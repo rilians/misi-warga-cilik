@@ -27,7 +27,7 @@ export default function ObjectivePage() {
       {/* Prev Button - Bottom Left */}
       <button
         onClick={() => router.push('/')}
-        className="absolute bottom-6 left-6 w-14 h-14 hover:scale-110 transition-transform duration-300 active:scale-95 z-10"
+        className="absolute bottom-3 sm:bottom-4 md:bottom-6 left-3 sm:left-4 md:left-6 w-12 sm:w-14 h-12 sm:h-14 hover:scale-110 transition-transform duration-300 active:scale-95 z-10"
       >
         <Image
           src="/images/ui/btn-prev.png"
@@ -40,7 +40,7 @@ export default function ObjectivePage() {
       {/* Next Button - Bottom Right */}
       <button
         onClick={() => router.push('/instruction')}
-        className="absolute bottom-6 right-6 w-14 h-14 hover:scale-110 transition-transform duration-300 active:scale-95 z-10"
+        className="absolute bottom-3 sm:bottom-4 md:bottom-6 right-3 sm:right-4 md:right-6 w-12 sm:w-14 h-12 sm:h-14 hover:scale-110 transition-transform duration-300 active:scale-95 z-10"
       >
         <Image
           src="/images/ui/btn-next.png"

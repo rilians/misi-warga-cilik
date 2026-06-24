@@ -16,7 +16,7 @@ export default function ObjectivePage() {
     >
       <div className="absolute inset-0 opacity-70 bg-[radial-gradient(circle_at_25%_25%,rgba(255,255,255,0.7),transparent_28%),radial-gradient(circle_at_80%_20%,rgba(255,255,255,0.6),transparent_20%)]" />
       <Image
-        src="/images/objective/objective1.png"
+        src="/images/objective/objective1-3.png"
         alt="Objective"
         fill
         className="relative object-contain"

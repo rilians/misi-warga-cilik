@@ -22,9 +22,20 @@ export default async function StoryPage({ params }: Props) {
     notFound();
   }
 
-  const imagePath = `/images/story/page-${pageNum}.png`;
+  // Custom image paths untuk halaman tertentu
+  const customImages: { [key: number]: string } = {
+    1: '/images/story/page-1-2.png',
+    4: '/images/story/page-4-2.png',
+    5: '/images/story/page-5-3.png',
+    6: '/images/story/page-6-3.png',
+    7: '/images/story/page-7-2.png',
+    9: '/images/story/page-9-3.png',
+    10: '/images/story/page-10-2.png',
+  };
 
-  const prevHref = pageNum === 1 ? '/character' : `/story/${pageNum - 1}`;
+  const imagePath = customImages[pageNum] || `/images/story/page-${pageNum}.png`;
+
+  const prevHref = pageNum === 1 ? '/character/1' : `/story/${pageNum - 1}`;
   const nextHref = pageNum >= TOTAL_PAGES ? '/quiz' : `/story/${pageNum + 1}`;
 
   return (

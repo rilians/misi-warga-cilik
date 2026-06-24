@@ -9,8 +9,8 @@ export default function MenuPage() {
   const menuItems = [
     { label: 'Instruction', icon: '/images/ui/btn-instruc1.png', href: '/instruction' },
     { label: 'Objective', icon: '/images/ui/btn-objective.png', href: '/objective' },
-    { label: 'Story', icon: '/images/ui/btn-story.png', href: '/character' },
-    { label: 'Character', icon: '/images/ui/btn-char.png', href: '/character' },
+    { label: 'Story', icon: '/images/ui/btn-story.png', href: '/character/1' },
+    { label: 'Character', icon: '/images/ui/btn-char.png', href: '/character/1' },
     { label: 'Quiz', icon: '/images/ui/btn-quiz.png', href: '/quiz' },
   ];
 

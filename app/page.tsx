@@ -31,6 +31,13 @@ export default function Home() {
           />
         </button>
       </div>
+
+      {/* Credits */}
+      <div className="absolute bottom-4 left-4 z-10 text-xs text-white/70 backdrop-blur-sm bg-black/20 px-3 py-2 rounded-lg max-w-xs">
+        <div className="font-semibold text-white/90">Misi Warga Cilik</div>
+        <div>Research: Hilwa Imania Hamid</div>
+        <div className="text-white/60">Code: Egi Apriliansyah</div>
+      </div>
     </div>
   );
 }

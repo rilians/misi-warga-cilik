@@ -37,7 +37,7 @@ export default function QuizNinePage() {
         priority
       />
 
-      <div className="absolute top-6 right-4 z-20 rounded-[24px] border-2 border-[#f4bc00] bg-gradient-to-b from-[#fff7b8] via-[#f9e98a] to-[#f0d453] w-[110px] h-[32px] flex items-center justify-center px-2 shadow-[inset_0_2px_0_rgba(255,255,255,0.85),0_3px_8px_rgba(0,0,0,0.15)]">
+      <div className="absolute top-6 left-1/2 -translate-x-1/2 z-20 rounded-[24px] border-2 border-[#f4bc00] bg-gradient-to-b from-[#fff7b8] via-[#f9e98a] to-[#f0d453] w-[110px] h-[32px] flex items-center justify-center px-2 shadow-[inset_0_2px_0_rgba(255,255,255,0.85),0_3px_8px_rgba(0,0,0,0.15)]">
         <div className="text-[14px] font-black text-[#ffe94d]">★</div>
         <div className="ml-1 text-[10px] font-black text-[#4d2500]">
           <span>{score}</span>
@@ -66,7 +66,7 @@ export default function QuizNinePage() {
             }`}>
               {selectedAnswer === 'A' && CA === 'A' ? '✓' : selectedAnswer === 'A' && CA !== 'A' ? '✗' : 'A'}
             </span>
-            <span className="ml-2 text-[14px] font-bold text-[#341d38]">Lingkungan bersih nyaman</span>
+            <span className="ml-2 text-[12px] font-bold text-[#341d38]">Lingkungan bersih nyaman</span>
           </label>
 
           <label 
@@ -89,7 +89,7 @@ export default function QuizNinePage() {
             }`}>
               {selectedAnswer === 'B' && CA === 'B' ? '✓' : selectedAnswer === 'B' && CA !== 'B' ? '✗' : 'B'}
             </span>
-            <span className="ml-2 text-[14px] font-bold text-[#341d38]">Hanya untuk orang tua</span>
+            <span className="ml-2 text-[12px] font-bold text-[#341d38]">Hanya untuk orang tua</span>
           </label>
 
           <label 
@@ -112,7 +112,7 @@ export default function QuizNinePage() {
             }`}>
               {selectedAnswer === 'C' && CA === 'C' ? '✓' : selectedAnswer === 'C' && CA !== 'C' ? '✗' : 'C'}
             </span>
-            <span className="ml-2 text-[14px] font-bold text-[#341d38]">Tidak penting dilakukan</span>
+            <span className="ml-2 text-[12px] font-bold text-[#341d38]">Tidak penting dilakukan</span>
           </label>
 
           <label 
@@ -135,7 +135,7 @@ export default function QuizNinePage() {
             }`}>
               {selectedAnswer === 'D' && CA === 'D' ? '✓' : selectedAnswer === 'D' && CA !== 'D' ? '✗' : 'D'}
             </span>
-            <span className="ml-2 text-[14px] font-bold text-[#341d38]">Tugas guru saja</span>
+            <span className="ml-2 text-[12px] font-bold text-[#341d38]">Tugas guru saja</span>
           </label>
         </div>
       </div>

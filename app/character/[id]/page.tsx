@@ -38,7 +38,9 @@ export default function CharacterPage({ params }: { params: Promise<{ id: string
       {/* Prev Button - Bottom Left */}
       <button
         onClick={() => router.push(prevHref)}
-        className="absolute bottom-6 left-6 w-16 h-16 rounded-full transition-transform duration-200 hover:scale-105"
+        className={`absolute left-6 transition-transform duration-200 hover:scale-105 ${
+          charId === 1 ? 'bottom-8 w-12 h-12' : 'bottom-4 w-12 h-12'
+        } rounded-full`}
       >
         <Image
           src="/images/ui/btn-prev.png"
@@ -52,7 +54,9 @@ export default function CharacterPage({ params }: { params: Promise<{ id: string
       {nextHref ? (
         <button
           onClick={() => router.push(nextHref)}
-          className="absolute bottom-6 right-6 w-16 h-16 rounded-full transition-transform duration-200 hover:scale-105"
+          className={`absolute right-6 transition-transform duration-200 hover:scale-105 ${
+            charId === 1 ? 'bottom-8 w-12 h-12' : 'bottom-6 w-16 h-16'
+          } rounded-full`}
         >
           <Image
             src="/images/ui/btn-next.png"

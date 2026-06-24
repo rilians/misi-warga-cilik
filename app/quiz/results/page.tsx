@@ -95,21 +95,14 @@ export default function QuizResultsPage() {
           </div>
         </div>
 
-        {/* Navigation Buttons */}
-        <div className="flex gap-4 flex-col lg:flex-row w-full max-w-md mt-8">
+        {/* Navigation Button */}
+        <div className="w-full max-w-md mt-8">
           <button
             type="button"
-            onClick={() => router.push('/menu')}
-            className="flex-1 px-6 py-4 bg-gradient-to-r from-orange-400 to-orange-500 text-white text-lg font-black rounded-2xl hover:scale-105 active:scale-95 transition-transform shadow-lg"
+            onClick={() => router.push('/feedback')}
+            className="w-full px-6 py-4 bg-gradient-to-r from-teal-400 to-cyan-500 text-white text-lg font-black rounded-2xl hover:scale-105 active:scale-95 transition-transform shadow-lg"
           >
-            🏠 Kembali ke Menu
-          </button>
-          <button
-            type="button"
-            onClick={() => router.push('/quiz')}
-            className="flex-1 px-6 py-4 bg-gradient-to-r from-blue-400 to-blue-500 text-white text-lg font-black rounded-2xl hover:scale-105 active:scale-95 transition-transform shadow-lg"
-          >
-            🔄 Ulang Quiz
+            📖 Lihat Umpan Balik
           </button>
         </div>
       </div>

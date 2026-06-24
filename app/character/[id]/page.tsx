@@ -20,10 +20,15 @@ export default function CharacterPage({ params }: { params: Promise<{ id: string
   const prevHref = charId === 1 ? '/menu' : `/character/${charId - 1}`;
   const nextHref = charId < TOTAL_CHARACTERS ? `/character/${charId + 1}` : null;
 
+  const customImages: { [key: number]: string } = {
+    1: '/images/character/char1-2.png',
+  };
+  const imagePath = customImages[charId] || `/images/character/char${charId}.png`;
+
   return (
     <div className="relative w-full h-screen overflow-hidden">
       <Image
-        src={`/images/character/char${charId}.png`}
+        src={imagePath}
         alt={`Character ${charId}`}
         fill
         className="object-contain"

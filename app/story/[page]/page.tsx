@@ -31,6 +31,10 @@ export default async function StoryPage({ params }: Props) {
     7: '/images/story/page-7-2.png',
     9: '/images/story/page-9-3.png',
     10: '/images/story/page-10-2.png',
+    11: '/images/story/page-11-2.png',
+    12: '/images/story/page-12-2.png',
+    13: '/images/story/page-13-2.png',
+    14: '/images/story/page-14-2.png',
   };
 
   const imagePath = customImages[pageNum] || `/images/story/page-${pageNum}.png`;

@@ -40,7 +40,13 @@ export default async function StoryPage({ params }: Props) {
   const imagePath = customImages[pageNum] || `/images/story/page-${pageNum}.png`;
 
   const prevHref = pageNum === 1 ? '/character/1' : `/story/${pageNum - 1}`;
-  const nextHref = pageNum >= TOTAL_PAGES ? '/quiz' : `/story/${pageNum + 1}`;
+  const nextHref = pageNum >= TOTAL_PAGES
+    ? '/quiz'
+    : pageNum === 4
+    ? '/understanding2'
+    : pageNum === 10
+    ? '/understanding3'
+    : `/story/${pageNum + 1}`;
 
   return (
     <div className="relative h-screen w-full overflow-hidden bg-black">

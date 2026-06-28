@@ -19,10 +19,15 @@ function doPost(e) {
     const jawaban9 = e.parameter.jawaban9 || '';
     const jawaban10 = e.parameter.jawaban10 || '';
     const skor = e.parameter.skor || '';
+    const understandingJawaban1 = e.parameter.understanding_jawaban1 || '';
+    const understandingJawaban2 = e.parameter.understanding_jawaban2 || '';
+    const understandingJawaban3 = e.parameter.understanding_jawaban3 || '';
+
+    const timestamp = Utilities.formatDate(new Date(), 'Asia/Jakarta', 'dd/MM/yyyy HH:mm');
     
     // Add new row with data
     sheet.appendRow([
-      new Date(),
+      timestamp,
       nama,
       kelas,
       jawaban1,
@@ -35,7 +40,10 @@ function doPost(e) {
       jawaban8,
       jawaban9,
       jawaban10,
-      skor
+      skor,
+      understandingJawaban1,
+      understandingJawaban2,
+      understandingJawaban3
     ]);
     
     // Return success

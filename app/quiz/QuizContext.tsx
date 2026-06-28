@@ -13,6 +13,8 @@ interface QuizContextType {
   setStudentClass: (cls: string) => void;
   answers: { [key: number]: string };
   setAnswer: (questionNumber: number, answer: string) => void;
+  understandingAnswers: { [key: number]: string };
+  setUnderstandingAnswer: (page: number, answer: string) => void;
 }
 
 const QuizContext = createContext<QuizContextType | undefined>(undefined);
@@ -22,6 +24,7 @@ export function QuizProvider({ children }: { children: ReactNode }) {
   const [studentName, setStudentName] = useState('');
   const [studentClass, setStudentClass] = useState('');
   const [answers, setAnswers] = useState<{ [key: number]: string }>({});
+  const [understandingAnswers, setUnderstandingAnswers] = useState<{ [key: number]: string }>({});
 
   const addScore = (points: number) => {
     setScore(prev => prev + points);
@@ -38,6 +41,13 @@ export function QuizProvider({ children }: { children: ReactNode }) {
     }));
   };
 
+  const setUnderstandingAnswer = (page: number, answer: string) => {
+    setUnderstandingAnswers(prev => ({
+      ...prev,
+      [page]: answer
+    }));
+  };
+
   return (
     <QuizContext.Provider value={{ 
       score, 
@@ -49,7 +59,9 @@ export function QuizProvider({ children }: { children: ReactNode }) {
       studentClass,
       setStudentClass,
       answers,
-      setAnswer
+      setAnswer,
+      understandingAnswers,
+      setUnderstandingAnswer
     }}>
       {children}
     </QuizContext.Provider>

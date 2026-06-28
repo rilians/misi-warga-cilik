@@ -68,7 +68,7 @@ export default function CharacterPage({ params }: { params: Promise<{ id: string
       ) : (
         <div className="absolute bottom-16 sm:bottom-20 right-3 sm:right-4 md:right-6 z-20">
           <button
-            onClick={() => router.push('/story/1')}
+            onClick={() => router.push('/understanding1')}
             className="relative w-40 sm:w-44 h-14 sm:h-16 hover:scale-105 transition-transform duration-300 active:scale-95"
           >
             <Image

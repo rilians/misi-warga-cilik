@@ -26,7 +26,12 @@ export default function QuizTenPage() {
     }
   };
 
+  const [isSubmitting, setIsSubmitting] = useState(false);
+
   const handleFinish = async () => {
+    if (isSubmitting) return;
+    setIsSubmitting(true);
+
     try {
       // Prepare FormData for submission
       const submitData = new FormData();
@@ -43,22 +48,26 @@ export default function QuizTenPage() {
       submitData.append('jawaban9', answers[9] || '');
       submitData.append('jawaban10', answers[10] || '');
       submitData.append('skor', score.toString());
+      
+      // Add understanding answers from localStorage
+      submitData.append('understanding_jawaban1', localStorage.getItem('understanding_jawaban1') || '');
+      submitData.append('understanding_jawaban2', localStorage.getItem('understanding_jawaban2') || '');
+      submitData.append('understanding_jawaban3', localStorage.getItem('understanding_jawaban3') || '');
 
       // Send to Google Apps Script
-      const SCRIPT_URL = 'https://script.google.com/macros/s/AKfycbwuY_zovbU2MkWA1YnDKUvxPkUpZSbLu_VwvMnM-woJ-naq8KlHoEji514nDms9LSwmag/exec';
+      const SCRIPT_URL = 'https://script.google.com/macros/s/AKfycbz7sflQlNBeMhz33AZOfsvsg2jh0QGWbfoiPDwVVS21Dp4W8-u8OURa-2Wv-KqxkRQEsQ/exec';
       
-      const response = await fetch(SCRIPT_URL, {
+      await fetch(SCRIPT_URL, {
         method: 'POST',
         body: submitData
       });
 
       console.log('Data sent successfully');
+      router.push('/quiz/results');
     } catch (error) {
       console.error('Data submission error:', error);
+      setIsSubmitting(false);
     }
-    
-    // Navigate to results page
-    router.push('/quiz/results');
   };
 
   return (
@@ -178,9 +187,11 @@ export default function QuizTenPage() {
       <button
         type="button"
         onClick={handleFinish}
-        disabled={!hasAnswered}
+        disabled={!hasAnswered || isSubmitting}
         className={`absolute bottom-16 lg:bottom-4 left-1/2 z-20 -translate-x-1/2 w-[180px] h-[56px] rounded-[26px] transition-transform duration-200 ${
-          hasAnswered ? 'hover:scale-110 active:scale-95 cursor-pointer' : 'opacity-50 cursor-not-allowed'
+          !hasAnswered || isSubmitting
+            ? 'opacity-50 cursor-not-allowed'
+            : 'hover:scale-110 active:scale-95 cursor-pointer'
         }`}
       >
         <Image
